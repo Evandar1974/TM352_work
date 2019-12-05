@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" id="jqm-trans-disable">
+        /* For having a faster transition */
+        $(document).on("mobileinit", function () {
+            $.mobile.defaultPageTransition = "none";
+            $.mobile.defaultDialogTransition = "none";
+        });
+    </script>
+    <title>MegaMax Sale</title>
+</head>
+<body>
+    <div class="app">
+        <h1>MegaMax Sale</h1>
+        <div data-role="controlgroup" data-type="horizontal">
+            <!-- TODO I. User Information -->
+            <label class="label" for="oucu">Sales ID:</label>
+            <input class="input" type="text" id="oucu" size="8" data-role="none" placeholder="zy631547" required />
+            <label class="label" for="password">Password:</label>
+            <input class="input" type="password" id="password" size="8" data-role="none" placeholder="86EssKWs" required />
+            <br />
+            <button class="button" type="button" id="loginLogout" onclick="app.megaMaxSale.loginLogout()">Login</button>
+            <br />
+            <label class="label" for="clientId">Client ID:</label>
+            <input class="input" type="text" id="clientId" size="8" data-role="none" disabled required />
+        </div>
+        <br />
+        <div data-role="controlgroup" data-type="horizontal">
+            <!-- TODO II. Widget navigation buttons -->
+            <button class="groupButton" type="button" id="prevWidg" disabled onclick="app.megaMaxSale.prevWidget()">Prev Widget</button>
+            <button class="groupButton" type="button" id="nextWidg" disabled onclick="app.megaMaxSale.nextWidget()">Next Widget</button>
+            <label class="label" for="quantity">Quantity:</label>
+            <input class="input" type="text" id="quantity" size="4" data-role="none" disabled />
+        </div>
+        <br />
+        <div data-role="controlgroup" data-type="horizontal">
+            <!-- TODO III. Widget display-->
+            <img class="blackBorder" style="width:200px;height:200px" id="widgetImage" src="img/logo.png" />
+            <br />
+            <label class="label" id="widgetDescription">widget discription</label>
+            <br />
+            <label class="label" for="widgetPrice">Normal Price: </label>
+            <label class="label" id="widgetPrice">0p</label>
+        </div>
+        <br />
+        <div data-role="controlgroup" data-type="horizontal">
+            <label class="label" for="price">Agreed price:</label>
+            <input class="input" type="text" id="price" size="5" data-role="none" disabled />
+            <br />
+            <br />
+            <button class="groupButton" type="button" id="prevOrder" disabled onclick="app.megaMaxSale.prevOrder()">Prev Order</button>
+            <button class="groupButton" type="button" id="nextOrder" disabled onclick="app.megaMaxSale.nextOrder()">Next Order</button>
+            <button class="groupButton" type="button" id="addToOrder" disabled onclick="app.megaMaxSale.addToOrder()">Add to Order</button>
+            <br />
+            <button class="Button" type="button" id="placeOrder" disabled onclick="app.megaMaxSale.placeOrder()">Place New order</button>
+            <!-- TODO IV. Order navigation buttons and display -->
+        </div>
+        <div id="orderData" style="width:95%; font-size:14px;"></div>
+        <label class="label" id="orderList">order list</label>
+        <div id="orderDataB" style="width:100%; float:right; "></div>
+        <br />
+        <br />
+        <!-- TODO V. Map canvas -->
+        <div class="blackBorder" id="map_canvas" style="position: center; width:95%; height: 50%;"></div>
+    </div>   
+    <!-- map things -->
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://js.api.here.com/v3/3.0/mapsjs-pano.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

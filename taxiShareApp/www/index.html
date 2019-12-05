@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" id="jqm-trans-disable">
+        /* For having a faster transition */
+        $(document).on("mobileinit", function () {
+            $.mobile.defaultPageTransition = "none";
+            $.mobile.defaultDialogTransition = "none";
+        });
+    </script>
+    <title>Taxi Sharing</title>
+</head>
+<body>
+    <div class="app">
+        <h1>Taxi Sharing</h1>
+        <!--Done 1(b)(i)-(v) Function buttons:-->
+        <!--(i) register-->
+        <span>
+            <label for="name" style=" float:left;width 10em; margin-right:1em;">OUCU:</label>
+            <input type="text" id="name" placeholder="oucu" required /> <br />
+            <button type="button" id="register" onclick="app.taxiShare.register()">Register User</button>
+            
+            <button type="button" id="photo" onclick="app.taxiShare.photo()">Take Photo</button>
+            <img style="width:40%;height:20%;" id="image" src="img/logo.png" />
+        </span>
+        <br /><br />
+        <!-- input boxes for share and request -->
+        <span style="white-space:nowrap">
+            <label for="addr" style=" float:left;width 10em; margin-right:1em;">Address:</label>
+            <input type="text" id="addr" placeholder="address">
+        </span>
+        <span style="white-space:nowrap">
+            <label for="time" style=" float:left;width 10em; margin-right:1em;">Time:</label>
+            <input type="datetime-local" id="time">
+        </span>
+        <span style="white-space:nowrap">
+            <label for="hours" style=" float:left;width 10em; margin-right:1em;">Hours:</label>
+            <input type="number" id="hours">
+        </span>
+        <br />
+
+        <span style="white-space:nowrap">
+            <!--(ii) volunteer-->
+            <button type="button" id="volunteer" onclick="app.taxiShare.volunteer()">Volunteer Share</button>
+            <!--(iii) request-->
+            <button type="button" id="request" onclick="app.taxiShare.request()">Request Share</button>
+            <!--(iv) cancel-->
+            <button type="button" id="cancel" onclick="app.taxiShare.cancel()">Cancel Shares</button>
+        </span>
+        <br /><br />
+        <!-- (v) update-->
+        <span style="white-space:nowrap">
+            <button type="button" id="startUpdate" onclick="app.taxiShare.start()">Start Update</button>
+            <button type="button" id="stopUpdate" onclick="app.taxiShare.stop()">Stop Update</button>
+        </span>
+        <br /><br />
+        <!-- Done 1(c) Map canvas -->
+        <div id="map_canvas" style="position: relative; width:100%; height: 50%;"></div>
+    </div>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://js.api.here.com/v3/3.0/mapsjs-pano.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
